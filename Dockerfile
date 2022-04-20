@@ -1,8 +1,6 @@
 # Common build stage
 FROM node:16-alpine3.14 as common-build-stage
 
-USER 1000
-
 COPY . ./app
 
 WORKDIR /app
@@ -19,5 +17,6 @@ ENV NODE_ENV production
 ENV PORT 3000
 
 USER 1000
+RUN chown -R 1000:1000 /app/dist
 
 CMD node dist/server.js
