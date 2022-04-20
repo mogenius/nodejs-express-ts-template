@@ -16,6 +16,6 @@ FROM common-build-stage as production-build-stage
 ENV NODE_ENV production
 ENV PORT 3000
 
-USER 1000
+USER 1001
 
 CMD node dist/server.js
